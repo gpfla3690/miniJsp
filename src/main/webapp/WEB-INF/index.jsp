@@ -10,7 +10,7 @@
 	<h1>Servlet으로 부터 실행된 JSP</h1>
 	
 	<p>
-		보내주신 값에 5를 곱하면<%=request.getAttribute("result")%>
+		보내주신 값에 5를 곱하면? ${result}
 	</p>
 </body>
 </html>
