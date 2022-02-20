@@ -16,8 +16,7 @@ public class HomeServlet extends HttpServlet {
 		
 		String number = request.getParameter("number");
 		
-		int result = Integer.parseInt(number) * 5;
-		
+		int result = Integer.parseInt(number);
 		
 		request.setAttribute("result", result);
 		

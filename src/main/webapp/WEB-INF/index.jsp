@@ -7,10 +7,16 @@
 <title>servlet</title>
 </head>
 <body>
-	<h1>Servlet으로 부터 실행된 JSP</h1>
+	<h1>${result} 단</h1>
 	
-	<p>
-		보내주신 값에 5를 곱하면? ${result}
-	</p>
+	<%
+	int number = (int)request.getAttribute("result");
+	
+	for( int i = 1; i < 10; i++ ){ %>
+		
+		<p><%=number%> * <%=i%> = <%=number * i%></p>
+		
+	<% } %>
+	
 </body>
 </html>
