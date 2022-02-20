@@ -1,5 +1,6 @@
 package com.yhr.mini;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -13,29 +14,9 @@ public class HomeServlet extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String number = request.getParameter("number"); 
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/index.jsp");
 		
-		int result = Integer.parseInt(number) * 5;
-		
-		response.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html; charset=UTF-8");
-		
-		PrintWriter write = response.getWriter();
-		
-		write.println("<!DOCTYPE html>"
-				+ "<html lang='ko'>"
-				+ "<head>"
-				+ "<meta charset='UTF-8'>"
-				+ "<title>servlet</title>"
-				+ "<body>"
-				+ "<h1>"
-				+ "보내주신 숫자에 5를 곱한 결과는"
-				+ result
-				+ "입니다."
-				+ "</h1>"
-				+ "</body>"
-				+ "</html>");
-		
+		requestDispatcher.forward(request, response);
 		
 	}
 
